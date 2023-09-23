@@ -29,6 +29,7 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(filePath);
     }
 );
+builder.Services.AddHealthChecks();
 
 
 var app = builder.Build();
@@ -43,6 +44,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseHealthChecks("/hc");
 
 app.MapControllers();
 
