@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TVSeriesTracker.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [EnableCors("AllowAllOrigins")] //Can be add for controller or only for one method 
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

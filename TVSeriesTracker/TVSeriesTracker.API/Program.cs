@@ -31,6 +31,13 @@ builder.Services.AddSwaggerGen(c =>
 );
 builder.Services.AddHealthChecks();
 
+builder.Services.AddCors(options =>
+    options.AddPolicy(name: "AllowAllOrigins", 
+        builder => builder.AllowAnyOrigin()));
+builder.Services.AddCors(options =>
+    options.AddPolicy(name: "AllowSpecificOrigins",
+        builder => builder.WithOrigins("https://localhost:44322")));         //always: hostname:1234 without "/" at the end
+
 
 var app = builder.Build();
 
@@ -42,6 +49,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseRouting();
+
+app.UseCors();  // app.UseCors always need to be add beetwen UseRouting() and UseAuthorization()
 
 app.UseAuthorization();
 
