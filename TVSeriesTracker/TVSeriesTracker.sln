@@ -3,7 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.33808.371
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVSeriesTracker.API", "TVSeriesTracker.API\TVSeriesTracker.API.csproj", "{E905FB68-BD1F-4AE5-B8A5-0D70583F17A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TVSeriesTracker.API", "TVSeriesTracker.API\TVSeriesTracker.API.csproj", "{E905FB68-BD1F-4AE5-B8A5-0D70583F17A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{C1D85843-022D-44A5-A20E-96C7D1A752D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{395372C3-CEA0-4D7B-950F-C0565830AA62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D1C2F8F5-E9F9-444A-8033-F3E328FD5ED7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVSeriesTracker.Application", "TVSeriesTracker.Application\TVSeriesTracker.Application.csproj", "{332B0C07-2A2F-4E6C-837F-7637054E5FC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVSeriesTracker.Common", "TVSeriesTracker.Common\TVSeriesTracker.Common.csproj", "{BFDE07EB-665C-49F1-BCAE-FF18B139BE5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVSeriesTracker.Domain", "TVSeriesTracker.Domain\TVSeriesTracker.Domain.csproj", "{14B32C5A-36C7-456A-8B28-F26516A93131}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVSeriesTracker.Infrastructure", "TVSeriesTracker.Infrastructure\TVSeriesTracker.Infrastructure.csproj", "{71797818-594C-4EAE-8072-C0C926384E48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVSeriesTracker.Persistance", "TVSeriesTracker.Persistance\TVSeriesTracker.Persistance.csproj", "{85C2C2F5-41CE-43C0-8509-232A27C3C400}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +31,37 @@ Global
 		{E905FB68-BD1F-4AE5-B8A5-0D70583F17A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E905FB68-BD1F-4AE5-B8A5-0D70583F17A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E905FB68-BD1F-4AE5-B8A5-0D70583F17A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{332B0C07-2A2F-4E6C-837F-7637054E5FC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{332B0C07-2A2F-4E6C-837F-7637054E5FC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{332B0C07-2A2F-4E6C-837F-7637054E5FC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{332B0C07-2A2F-4E6C-837F-7637054E5FC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFDE07EB-665C-49F1-BCAE-FF18B139BE5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFDE07EB-665C-49F1-BCAE-FF18B139BE5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFDE07EB-665C-49F1-BCAE-FF18B139BE5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFDE07EB-665C-49F1-BCAE-FF18B139BE5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14B32C5A-36C7-456A-8B28-F26516A93131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B32C5A-36C7-456A-8B28-F26516A93131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B32C5A-36C7-456A-8B28-F26516A93131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B32C5A-36C7-456A-8B28-F26516A93131}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71797818-594C-4EAE-8072-C0C926384E48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71797818-594C-4EAE-8072-C0C926384E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71797818-594C-4EAE-8072-C0C926384E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71797818-594C-4EAE-8072-C0C926384E48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85C2C2F5-41CE-43C0-8509-232A27C3C400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85C2C2F5-41CE-43C0-8509-232A27C3C400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85C2C2F5-41CE-43C0-8509-232A27C3C400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85C2C2F5-41CE-43C0-8509-232A27C3C400}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E905FB68-BD1F-4AE5-B8A5-0D70583F17A1} = {C1D85843-022D-44A5-A20E-96C7D1A752D4}
+		{332B0C07-2A2F-4E6C-837F-7637054E5FC8} = {D1C2F8F5-E9F9-444A-8033-F3E328FD5ED7}
+		{BFDE07EB-665C-49F1-BCAE-FF18B139BE5B} = {D1C2F8F5-E9F9-444A-8033-F3E328FD5ED7}
+		{14B32C5A-36C7-456A-8B28-F26516A93131} = {D1C2F8F5-E9F9-444A-8033-F3E328FD5ED7}
+		{71797818-594C-4EAE-8072-C0C926384E48} = {395372C3-CEA0-4D7B-950F-C0565830AA62}
+		{85C2C2F5-41CE-43C0-8509-232A27C3C400} = {395372C3-CEA0-4D7B-950F-C0565830AA62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F89658B-D486-456D-BDE3-896EEF19B2C0}
