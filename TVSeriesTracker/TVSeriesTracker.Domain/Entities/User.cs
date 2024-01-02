@@ -20,8 +20,8 @@ namespace TVSeriesTracker.Domain.Entities
 
         public ICollection<SeriesComment> SeriesComments { get; set; }
 
-        public ICollection<MovieComment> FavoritesMovies { get; set; }
+        public ICollection<MovieComment> FavoriteMovies { get; set; }
 
-        public ICollection<SeriesComment> FavoritesSeries { get; set; }
+        public ICollection<SeriesComment> FavoriteSeries { get; set; }
     }
 }
