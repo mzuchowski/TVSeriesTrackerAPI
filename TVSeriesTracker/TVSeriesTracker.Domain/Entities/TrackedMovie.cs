@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TVSeriesTracker.Domain.Common;
 
 namespace TVSeriesTracker.Domain.Entities
 {
-    public class TrackedMovie
+    public class TrackedMovie : AuditableEntity
     {
         public int MovieId { get; set; }
 

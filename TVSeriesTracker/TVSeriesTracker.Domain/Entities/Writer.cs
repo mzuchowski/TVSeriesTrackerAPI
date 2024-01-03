@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TVSeriesTracker.Domain.Common;
 using TVSeriesTracker.Domain.ValueObjects;
 
 namespace TVSeriesTracker.Domain.Entities
 {
-    public class Writer
+    public class Writer : AuditableEntity
     {
         public int Id { get; set; }
 
