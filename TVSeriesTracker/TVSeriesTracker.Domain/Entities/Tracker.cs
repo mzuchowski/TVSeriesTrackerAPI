@@ -14,6 +14,10 @@ namespace TVSeriesTracker.Domain.Entities
 
         public User User { get; set; }
 
+        public TrackedMovie TrackedMovies { get; set; }
+
+        public TrackedSeries TrackedSeries { get; set; }
+
         public DateTime Created { get; set; }
     }
 }

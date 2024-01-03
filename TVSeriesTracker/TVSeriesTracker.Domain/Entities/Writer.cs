@@ -7,16 +7,14 @@ using TVSeriesTracker.Domain.ValueObjects;
 
 namespace TVSeriesTracker.Domain.Entities
 {
-    public class MovieComment
+    public class Writer
     {
         public int Id { get; set; }
 
-        public Movie Movie { get; set; }
+        public PersonName WriterName { get; set; }
 
-        public int UserId { get; set; }
+        public ICollection<Movie> Movies { get; set; }
 
-        public User User { get; set; }
-
-        public Comment Comment { get; set; }
+        public ICollection<Series> Series { get; set; }
     }
 }

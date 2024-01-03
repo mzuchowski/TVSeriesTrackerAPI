@@ -17,5 +17,9 @@ namespace TVSeriesTracker.Domain.Entities
         public User User { get; set; }
 
         public TrackingStatus Status { get; set; }
+
+        public int TrackerId { get; set; }
+
+        public Tracker Tracker { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TVSeriesTracker.Domain.ValueObjects;
 
 namespace TVSeriesTracker.Domain.Entities
 {
@@ -18,6 +19,6 @@ namespace TVSeriesTracker.Domain.Entities
 
         public User User { get; set; }
 
-        public string CommentText { get; set; }
+        public Comment Comment { get; set; }
     }
 }

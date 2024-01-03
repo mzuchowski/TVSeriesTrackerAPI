@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TVSeriesTracker.Domain.ValueObjects;
 
 namespace TVSeriesTracker.Domain.Entities
 {
@@ -10,15 +11,7 @@ namespace TVSeriesTracker.Domain.Entities
     {
         private string Id { get; set; }
 
-        public string Title { get; set; }
-
-        public string CountryOfProduction { get; set; }
-
-        public string Language { get; set; }
-
-        public string Description { get; set; }
-
-        public int PremiereYear { get; set; }
+        public VideoProperties SeriesProperies { get; set; }
 
         public int FinalYear { get; set; }
 
@@ -26,12 +19,10 @@ namespace TVSeriesTracker.Domain.Entities
 
         public Director Director { get; set; }
 
-        public int Runtime { get; set; }
+        public Writer Writer { get; set; }
 
         public ICollection<Genre> Genres { get; set; }
 
         public ExternalDataSourceDetail SeriesExternalDataSourceDetails { get; set; }
-
-        public int SourceId { get; set; }
     }
 }
