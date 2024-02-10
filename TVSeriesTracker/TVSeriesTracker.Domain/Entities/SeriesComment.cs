@@ -20,6 +20,6 @@ namespace TVSeriesTracker.Domain.Entities
 
         public User User { get; set; }
 
-        public Comment Comment { get; set; }
+        public Comment CommentContent { get; set; }
     }
 }
