@@ -1,9 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -27,17 +25,16 @@ builder.Services.AddSwaggerGen(c =>
     });
     var filePath = Path.Combine(AppContext.BaseDirectory, "TVSeriesTracker.API.xml");
     c.IncludeXmlComments(filePath);
-    }
+}
 );
 builder.Services.AddHealthChecks();
 
 builder.Services.AddCors(options =>
-    options.AddPolicy(name: "AllowAllOrigins", 
+    options.AddPolicy(name: "AllowAllOrigins",
         builder => builder.AllowAnyOrigin()));
 builder.Services.AddCors(options =>
     options.AddPolicy(name: "AllowSpecificOrigins",
         builder => builder.WithOrigins("https://localhost:44322")));         //always: hostname:1234 without "/" at the end
-
 
 var app = builder.Build();
 
