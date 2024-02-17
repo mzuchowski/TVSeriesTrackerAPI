@@ -20,5 +20,9 @@ namespace TVSeriesTracker.Domain.Entities
         public int SeasonId { get; set; }
 
         public Season Season { get; set; }
+
+        public ICollection<SeriesComment> EpisodeComments { get; set; }
+
+        public ICollection<TrackedSeries> Tracked { get; set; }
     }
 }

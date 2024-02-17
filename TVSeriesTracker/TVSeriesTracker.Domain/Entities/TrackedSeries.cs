@@ -9,15 +9,17 @@ namespace TVSeriesTracker.Domain.Entities
 {
     public class TrackedSeries : AuditableEntity
     {
-        public int SeriesId { get; set; }
+        public int Id { get; set; }
+
+        public int? SeriesId { get; set; }
 
         public Series Series { get; set; }
 
-        public int EpisodeId { get; set; }
+        public int? EpisodeId { get; set; }
 
         public Episode Episode { get; set; }
 
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
 
         public User User { get; set; }
 

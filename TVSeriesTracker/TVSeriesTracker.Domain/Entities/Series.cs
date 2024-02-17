@@ -10,7 +10,7 @@ namespace TVSeriesTracker.Domain.Entities
 {
     public class Series : AuditableEntity
     {
-        private string Id { get; set; }
+        public int Id { get; set; }
 
         public VideoProperties SeriesProperies { get; set; }
 
@@ -23,6 +23,10 @@ namespace TVSeriesTracker.Domain.Entities
         public Writer Writer { get; set; }
 
         public ICollection<Genre> Genres { get; set; }
+
+        public ICollection<SeriesComment> SeriesComments { get; set; }
+
+        public ICollection<TrackedSeries> Tracked { get; set; }
 
         public ExternalDataSourceDetail SeriesExternalDataSourceDetails { get; set; }
     }

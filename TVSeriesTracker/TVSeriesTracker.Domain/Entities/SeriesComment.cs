@@ -12,7 +12,11 @@ namespace TVSeriesTracker.Domain.Entities
     {
         public int Id { get; set; }
 
+        public int SeriesId { get; set; }
+
         public Series Series { get; set; }
+
+        public int? EpisodeId { get; set; }
 
         public Episode Episode { get; set; }
 
