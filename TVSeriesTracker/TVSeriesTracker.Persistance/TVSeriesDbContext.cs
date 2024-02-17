@@ -19,7 +19,7 @@ namespace TVSeriesTracker.Persistance
         public DbSet<Season> Seasons { get; set; }
         public DbSet<Series> Seriess { get; set; }
         public DbSet<SeriesComment> SeriesComments { get; set; }
-        public DbSet<TrackedMovie> trackedMovies { get; set; }
+        public DbSet<TrackedMovie> TrackedMovies { get; set; }
         public DbSet<TrackedSeries> TrackedSeries { get; set; }
         public DbSet<Tracker> Trackers { get; set; }
         public DbSet<TrackingStatus> TrackingStatuses { get; set; }
