@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TVSeriesTracker.Domain.Common;
+
 using TVSeriesTracker.Domain.ValueObjects;
 
 namespace TVSeriesTracker.Domain.Entities
@@ -20,6 +21,6 @@ namespace TVSeriesTracker.Domain.Entities
 
         public ICollection<Genre> Genres { get; set; }
 
-        public ExternalDataSourceDetail MovieExternalDataSourceDetails { get; set; }
+        public ExternalDataSourceDetail? MovieExternalDataSourceDetails { get; set; }
     }
 }

@@ -34,6 +34,8 @@ namespace TVSeriesTracker.Persistance
             modelBuilder.Entity<MovieComment>().OwnsOne(p => p.CommentContent);
             modelBuilder.Entity<Series>().OwnsOne(p => p.SeriesProperies);
             modelBuilder.Entity<Movie>().OwnsOne(p => p.MovieProperties);
+
+            modelBuilder.SeedDate();
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
