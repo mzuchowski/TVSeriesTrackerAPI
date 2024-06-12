@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TVSeriesTracker.Application\TVSeriesTracker.Application.csproj" />
     <ProjectReference Include="..\TVSeriesTracker.Domain\TVSeriesTracker.Domain.csproj" />
   </ItemGroup>
 

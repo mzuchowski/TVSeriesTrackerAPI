@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TVSeriesTracker.Application.Interfaces;
 using TVSeriesTracker.Domain.Entities;
 
 namespace TVSeriesTracker.Persistance
 {
     public static class Seed
     {
-        public static void SeedDate(this ModelBuilder modelBuilder)
+        public static void SeedDate(this ModelBuilder modelBuilder, IDateTime dateTime)
         {
             modelBuilder.Entity<Director>(d =>
             {
@@ -33,7 +34,7 @@ namespace TVSeriesTracker.Persistance
                     Id = 1,
                     DirectorId = 1,
                     StatusId = 1,
-                    Created = DateTime.Now,
+                    Created = dateTime.Now,
                     CreatedBy = "Michał Zuchowski"
                 });
                 d.OwnsOne(d => d.MovieProperties)
@@ -57,7 +58,7 @@ namespace TVSeriesTracker.Persistance
                     Id = 2,
                     DirectorId = 1,
                     StatusId = 1,
-                    Created = DateTime.Now,
+                    Created = dateTime.Now,
                     CreatedBy = "Michał Zuchowski"
                 });
                 d.OwnsOne(d => d.MovieProperties)
