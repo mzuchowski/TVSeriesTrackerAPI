@@ -12,7 +12,7 @@ namespace TVSeriesTracker.Domain.Entities
     {
         public int Id { get; set; }
 
-        public VideoProperties SeriesProperies { get; set; }
+        public VideoProperties SeriesProperties { get; set; }
 
         public int FinalYear { get; set; }
 
