@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using TVSeriesTracker.Domain.Common;
 using TVSeriesTracker.Domain.Entities;
 
@@ -28,13 +29,7 @@ namespace TVSeriesTracker.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Director>().OwnsOne(p => p.DirectorName);
-            modelBuilder.Entity<Writer>().OwnsOne(p => p.WriterName);
-            modelBuilder.Entity<SeriesComment>().OwnsOne(p => p.CommentContent);
-            modelBuilder.Entity<MovieComment>().OwnsOne(p => p.CommentContent);
-            modelBuilder.Entity<Series>().OwnsOne(p => p.SeriesProperies);
-            modelBuilder.Entity<Movie>().OwnsOne(p => p.MovieProperties);
-
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             modelBuilder.SeedDate();
         }
 
