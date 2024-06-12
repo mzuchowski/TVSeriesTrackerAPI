@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TVSeriesTracker.Persistance;
 
@@ -11,9 +12,11 @@ using TVSeriesTracker.Persistance;
 namespace TVSeriesTracker.Persistance.Migrations
 {
     [DbContext(typeof(TVSeriesDbContext))]
-    partial class TVSeriesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240612162145_configuration")]
+    partial class configuration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,7 +93,7 @@ namespace TVSeriesTracker.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2024, 6, 12, 18, 24, 31, 900, DateTimeKind.Local).AddTicks(5285),
+                            Created = new DateTime(2024, 6, 12, 18, 21, 45, 98, DateTimeKind.Local).AddTicks(1437),
                             CreatedBy = "Michał Zuchowski",
                             StatusId = 1
                         });
@@ -282,7 +285,7 @@ namespace TVSeriesTracker.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2024, 6, 12, 18, 24, 31, 900, DateTimeKind.Local).AddTicks(5763),
+                            Created = new DateTime(2024, 6, 12, 18, 21, 45, 98, DateTimeKind.Local).AddTicks(2027),
                             CreatedBy = "Michał Zuchowski",
                             DirectorId = 1,
                             StatusId = 1
@@ -290,7 +293,7 @@ namespace TVSeriesTracker.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2024, 6, 12, 18, 24, 31, 900, DateTimeKind.Local).AddTicks(5981),
+                            Created = new DateTime(2024, 6, 12, 18, 21, 45, 98, DateTimeKind.Local).AddTicks(2209),
                             CreatedBy = "Michał Zuchowski",
                             DirectorId = 1,
                             StatusId = 1
@@ -808,7 +811,7 @@ namespace TVSeriesTracker.Persistance.Migrations
                             b1.Property<string>("LastName")
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)")
-                                .HasColumnName("LastName");
+                                .HasColumnName("LastnametName");
 
                             b1.HasKey("DirectorId");
 
@@ -956,7 +959,7 @@ namespace TVSeriesTracker.Persistance.Migrations
                             b1.Property<DateTime>("Added")
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("datetime2")
-                                .HasDefaultValue(new DateTime(2024, 6, 12, 18, 24, 31, 871, DateTimeKind.Local).AddTicks(9720))
+                                .HasDefaultValue(new DateTime(2024, 6, 12, 18, 21, 45, 57, DateTimeKind.Local).AddTicks(4455))
                                 .HasColumnName("Added");
 
                             b1.Property<string>("CommentText")
@@ -1096,7 +1099,7 @@ namespace TVSeriesTracker.Persistance.Migrations
                             b1.Property<DateTime>("Added")
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("datetime2")
-                                .HasDefaultValue(new DateTime(2024, 6, 12, 18, 24, 31, 884, DateTimeKind.Local).AddTicks(290))
+                                .HasDefaultValue(new DateTime(2024, 6, 12, 18, 21, 45, 70, DateTimeKind.Local).AddTicks(1377))
                                 .HasColumnName("Added");
 
                             b1.Property<string>("CommentText")
@@ -1216,7 +1219,7 @@ namespace TVSeriesTracker.Persistance.Migrations
                             b1.Property<string>("LastName")
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)")
-                                .HasColumnName("LastName");
+                                .HasColumnName("LastnametName");
 
                             b1.HasKey("WriterId");
 
