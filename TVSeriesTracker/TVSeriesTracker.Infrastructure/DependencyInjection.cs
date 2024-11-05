@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TVSeriesTracker.Application.Interfaces;
+using TVSeriesTracker.Infrastructure.FileStore;
 using TVSeriesTracker.Infrastructure.Services;
 
 namespace TVSeriesTracker.Infrastructure
@@ -15,6 +16,9 @@ namespace TVSeriesTracker.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<IDateTime, DateTimeService>();
+            services.AddTransient<IFileStore, FileStore.FileStore>();
+            services.AddTransient<IFileWrapper, FileWrapper>();
+            services.AddTransient<IDirectoryWrapper, DirectoryWrapper>();
             return services;
         }
     }
