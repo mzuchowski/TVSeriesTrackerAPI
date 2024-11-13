@@ -6,7 +6,7 @@ using TVSeriesTracker.Domain.Entities;
 
 namespace TVSeriesTracker.Persistance
 {
-    public class TVSeriesDbContext : DbContext
+    public class TVSeriesDbContext : DbContext, ITVSeriesDbContext
     {
         private readonly IDateTime _dateTime;
 
