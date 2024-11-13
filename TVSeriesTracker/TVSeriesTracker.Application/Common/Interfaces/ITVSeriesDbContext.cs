@@ -11,11 +11,12 @@ namespace TVSeriesTracker.Application.Common.Interfaces
     public interface ITVSeriesDbContext
     {
         DbSet<Director> Directors { get; set; }
+        DbSet<DirectorBiography> DirectorBiographies { get; set; }
         DbSet<Episode> Episodes { get; set; }
         DbSet<ExternalDataSourceDetail> ExternalDataSourceDetails { get; set; }
         DbSet<Genre> Genres { get; set; }
         DbSet<Movie> Movies { get; set; }
-        DbSet<MovieComment> MoviesComment { get; set; }
+        DbSet<MovieComment> MoviesComments { get; set; }
         DbSet<Season> Seasons { get; set; }
         DbSet<Series> Seriess { get; set; }
         DbSet<SeriesComment> SeriesComments { get; set; }

@@ -20,11 +20,12 @@ namespace TVSeriesTracker.Persistance
         }
 
         public DbSet<Director> Directors { get; set; }
+        public DbSet<DirectorBiography> DirectorBiographies { get; set; }
         public DbSet<Episode> Episodes { get; set; }
         public DbSet<ExternalDataSourceDetail> ExternalDataSourceDetails { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Movie> Movies { get; set; }
-        public DbSet<MovieComment> MoviesComment { get; set; }
+        public DbSet<MovieComment> MoviesComments { get; set; }
         public DbSet<Season> Seasons { get; set; }
         public DbSet<Series> Seriess { get; set; }
         public DbSet<SeriesComment> SeriesComments { get; set; }

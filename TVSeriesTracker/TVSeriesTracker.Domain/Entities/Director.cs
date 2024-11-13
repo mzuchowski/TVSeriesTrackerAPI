@@ -14,6 +14,8 @@ namespace TVSeriesTracker.Domain.Entities
 
         public PersonName DirectorName { get; set; }
 
+        public DirectorBiography DirectorBiography { get; set; }
+
         public ICollection<Movie> Movies { get; set; }
 
         public ICollection<Series> Series { get; set; }
