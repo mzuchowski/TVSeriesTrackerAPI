@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using TVSeriesTracker.Application.Interfaces;
+using TVSeriesTracker.Application.Common.Interfaces;
 using TVSeriesTracker.Domain.Common;
 using TVSeriesTracker.Domain.Entities;
 
@@ -9,6 +9,10 @@ namespace TVSeriesTracker.Persistance
     public class TVSeriesDbContext : DbContext
     {
         private readonly IDateTime _dateTime;
+
+        public TVSeriesDbContext(DbContextOptions<TVSeriesDbContext> options) : base(options)
+        {
+        }
 
         public TVSeriesDbContext(DbContextOptions<TVSeriesDbContext> options, IDateTime dateTime) : base(options)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TVSeriesTracker.Persistance
 {
-    internal class TVSeriesDbContextFactory : DesignTimeDbContextFactoryBase<TVSeriesDbContext>
+    public class TVSeriesDbContextFactory : DesignTimeDbContextFactoryBase<TVSeriesDbContext>
     {
         protected override TVSeriesDbContext CreateNewInstance(DbContextOptions<TVSeriesDbContext> options)
         {

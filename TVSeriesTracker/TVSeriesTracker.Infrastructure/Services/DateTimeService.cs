@@ -1,4 +1,4 @@
-﻿using TVSeriesTracker.Application.Interfaces;
+﻿using TVSeriesTracker.Application.Common.Interfaces;
 
 namespace TVSeriesTracker.Infrastructure.Services
 {

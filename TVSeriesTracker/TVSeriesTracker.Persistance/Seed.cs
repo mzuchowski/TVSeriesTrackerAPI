@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TVSeriesTracker.Application.Interfaces;
+using TVSeriesTracker.Application.Common.Interfaces;
 using TVSeriesTracker.Domain.Entities;
 
 namespace TVSeriesTracker.Persistance

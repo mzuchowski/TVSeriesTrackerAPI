@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TVSeriesTracker.Application.Interfaces
+namespace TVSeriesTracker.Application.Common.Interfaces
 {
-    public interface IFileStore
+    public interface IDateTime
     {
+        DateTime Now { get; }
     }
 }
