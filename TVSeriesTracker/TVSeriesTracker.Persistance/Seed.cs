@@ -12,7 +12,7 @@ namespace TVSeriesTracker.Persistance
 {
     public static class Seed
     {
-        public static void SeedDate(this ModelBuilder modelBuilder, IDateTime dateTime)
+        public static void SeedDate(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Director>(d =>
             {
@@ -34,7 +34,7 @@ namespace TVSeriesTracker.Persistance
                     Id = 1,
                     DirectorId = 1,
                     StatusId = 1,
-                    Created = dateTime.Now,
+                    Created = DateTime.Now,
                     CreatedBy = "Michał Zuchowski"
                 });
                 d.OwnsOne(d => d.MovieProperties)
@@ -58,7 +58,7 @@ namespace TVSeriesTracker.Persistance
                     Id = 2,
                     DirectorId = 1,
                     StatusId = 1,
-                    Created = dateTime.Now,
+                    Created = DateTime.Now,
                     CreatedBy = "Michał Zuchowski"
                 });
                 d.OwnsOne(d => d.MovieProperties)
