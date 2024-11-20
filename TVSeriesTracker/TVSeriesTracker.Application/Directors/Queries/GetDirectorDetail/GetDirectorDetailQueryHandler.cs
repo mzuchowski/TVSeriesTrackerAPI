@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,12 @@ namespace TVSeriesTracker.Application.Directors.Queries.GetDirectorDetail
     public class GetDirectorDetailQueryHandler : IRequestHandler<GetDirectorDetailQuery, DirectorDetailVm>
     {
         private readonly ITVSeriesDbContext _context;
+        private IMapper _mapper;
 
-        public GetDirectorDetailQueryHandler(ITVSeriesDbContext tvSeriesDbContext)
+        public GetDirectorDetailQueryHandler(ITVSeriesDbContext tvSeriesDbContext, IMapper mapper)
         {
             _context = tvSeriesDbContext;
+            _mapper = mapper;
         }
 
         public async Task<DirectorDetailVm> Handle(GetDirectorDetailQuery request, CancellationToken cancellationToken)
@@ -29,11 +32,7 @@ namespace TVSeriesTracker.Application.Directors.Queries.GetDirectorDetail
 
             var lastMovie = director.Movies.OrderByDescending(m => m.MovieProperties.PremiereYear).FirstOrDefault();
 
-            var directorVm = new DirectorDetailVm()
-            {
-                FullName = director.DirectorName.ToString(),
-                LastMovieName = lastMovie?.MovieProperties?.Title ?? string.Empty
-            };
+            var directorVm = _mapper.Map<DirectorDetailVm>(director);
 
             return directorVm;
         }
