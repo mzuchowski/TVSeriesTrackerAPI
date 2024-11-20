@@ -24,6 +24,11 @@ namespace TVSeriesTracker.Application.Directors.Commands.DeleteDirector
         {
             var director = await _context.Directors.Where(d => d.Id == request.DirectorId).FirstOrDefaultAsync(cancellationToken);
 
+            if (director == null)
+            {
+                throw new Exception($"Director with ID {request.DirectorId} not found.");
+            }
+
             _context.Directors.Remove(director);
 
             await _context.SaveChangesAsync(cancellationToken);
