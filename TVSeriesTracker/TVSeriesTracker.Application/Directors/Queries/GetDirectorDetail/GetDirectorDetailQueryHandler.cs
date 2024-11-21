@@ -23,14 +23,12 @@ namespace TVSeriesTracker.Application.Directors.Queries.GetDirectorDetail
 
         public async Task<DirectorDetailVm> Handle(GetDirectorDetailQuery request, CancellationToken cancellationToken)
         {
-            var director = await _context.Directors.Where(p => p.Id == request.DirectorId).FirstOrDefaultAsync(cancellationToken);
+            var director = await _context.Directors.Include(p => p.Movies).Where(p => p.Id == request.DirectorId).FirstOrDefaultAsync(cancellationToken);
 
             if (director == null)
             {
                 throw new Exception("Director not found");
             }
-
-            var lastMovie = director.Movies.OrderByDescending(m => m.MovieProperties.PremiereYear).FirstOrDefault();
 
             var directorVm = _mapper.Map<DirectorDetailVm>(director);
 
