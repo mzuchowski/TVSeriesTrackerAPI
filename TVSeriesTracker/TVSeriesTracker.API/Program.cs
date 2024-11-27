@@ -1,7 +1,15 @@
+using Serilog;
 using TVSeriesTracker.Application;
 using TVSeriesTracker.Persistance;
 
+var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseSerilog();
+
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(configuration)
+    .CreateLogger();
 
 // Add services to the container.
 builder.Services.AddApplication();
@@ -41,25 +49,40 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: "AllowSpecificOrigins",
         builder => builder.WithOrigins("https://localhost:44322")));         //always: hostname:1234 without "/" at the end
 
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+try
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TVSeriesTrackerAPI"));
+    Log.Information("Starting up");
+
+    var app = builder.Build();
+
+    // Configure the HTTP request pipeline.
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TVSeriesTrackerAPI"));
+    }
+
+    app.UseHttpsRedirection();
+
+    app.UseSerilogRequestLogging();
+
+    app.UseRouting();
+
+    app.UseCors();  // app.UseCors always need to be add beetwen UseRouting() and UseAuthorization()
+
+    app.UseAuthorization();
+
+    app.UseHealthChecks("/hc");
+
+    app.MapControllers();
+
+    app.Run();
 }
-
-app.UseHttpsRedirection();
-
-app.UseRouting();
-
-app.UseCors();  // app.UseCors always need to be add beetwen UseRouting() and UseAuthorization()
-
-app.UseAuthorization();
-
-app.UseHealthChecks("/hc");
-
-app.MapControllers();
-
-app.Run();
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Host terminated unexpectedly");
+}
+finally
+{
+    Log.CloseAndFlush();
+}
